@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Chatbot</h1>
+        <form method="POST">
+            <input type="text" name="input_text" id="input_text" placeholder="Type your message here...">
+            <button type="submit">Send</button>
+        </form>
+        <div class="chat-history">
+            {% for message in chat_history %}
+                <div class="message">
+                    <div class="user">{{ message[0] }}</div>
+                    <div class="Alpha Bot">{{ message[1] }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
